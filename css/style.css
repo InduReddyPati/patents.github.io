@@ -1,0 +1,295 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h4{
+  text-align: center;
+}
+
+.popup_list{
+  
+  margin-right: 60px;
+
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 1px;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+}
+.tooltip_grouped_bar {
+  position: absolute;
+  display: none;
+  width: auto;
+  height: auto;
+  background: #515A5A;
+  border: 0 none;
+  border-radius: 4px;
+  color: #ffffff;
+  font: 12px sans-serif;
+  padding: 5px;
+  text-align: center;
+}
+/* Styling the contianers we have created for rows and columns */
+div {
+  position: absolute;
+}
+
+.vl {
+  border-left: 3px solid black;
+  height: 815px;
+  overflow:hidden;
+  left: 34%;
+  margin-left: -3px;
+  top: 0;
+}
+hr.new1 {
+  border-top: 3px solid black;
+  position: absolute;
+  width:66%;
+  margin-left: 34%;
+  margin-top: 28%;
+
+}
+
+hr.new4 {
+  width: 69%;
+  margin-left: 34%;
+  height: 1px;
+  border: 2px solid red;
+}
+#patent_map_view {
+  top: 0;
+  left: 0;
+}
+#trends_cpc_classes_and_types {
+  top: 49%;
+  left: 0;
+}
+#relation_between_cpc_classes {
+  top: 0;
+  left: 35%;
+}
+#heat_map{
+  top: -10px;;
+  left:65%;
+}
+#assigne_stock{
+  top:50%;
+  left:35%;
+  /* width: 50%;
+  height: 50%; */
+}
+/* #cpc_classes_network_graph {
+  top: 20%;
+  left: 10%;
+  height:100%;
+  width:50%;
+} */
+
+
+#assignee_bargrouped {
+  top: 50%;
+  left:60%;
+}
+
+#assigne_bubble {
+  top: 20%;
+  left: 10%;
+  height:100%;
+  width:50%;
+}
+#assignee_line {
+  top :20%;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+}
+
+/* Create two columns/boxes floating next to each other */
+ nav {
+  float: left;
+  width: 50%;
+  height: 750px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+ nav ul {
+  list-style-type: none;
+  padding: 0;
+} 
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.legend {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+  shape-rendering: crispEdges;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 300px;
+  height: 150px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: white;
+  border: 1px;
+  border-radius: 8px;
+  pointer-events: none;
+  box-shadow: 1px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.popup-trigger {
+  margin: 0 auto;
+  color: black;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: box-shadow 0s ease 0s;
+} 
+.popup-trigger:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding: 30px 15px;
+  color: #000;
+  visibility: hidden;
+  transition: visibility 0s ease 0s;
+}
+.popup::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(136, 134, 134, 0.9);
+    opacity: 0;
+    transition: opacity 0s ease 0s;
+}
+
+.popup__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 100%;
+}
+
+.popup__body {
+    width: 100%;
+    height: 80%;
+    max-width: 800px;
+    padding: 30px;
+    background-color: #fff;
+    opacity: 0.7;
+    border-radius: 5px;
+    transform: scale(0);
+    transition: all 0s ease 0s;
+}
+
+.popup__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 30;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.popup__close::after,
+.popup__close::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #000;
+    transition: all 0.3s ease 0s;
+}
+
+.popup__close::after {
+    bottom: calc(50% - 0.0625rem);
+    transform: rotate(45deg);
+}
+
+.popup__close::before {
+    top: calc(50% - 0.0625rem);
+    transform: rotate(-45deg);
+}
+
+.popup__text {
+    font-size: 16px;
+    font-weight: 200;
+    /* text-align: center; */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.popup.show {
+    visibility: visible;
+    overflow: auto;
+}
+.popup.show::before {
+    opacity: 1;
+}
+
+.popup__body {
+    transform: scale(1);
+    transition: all 0s ease 0s;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+} 
+
+
